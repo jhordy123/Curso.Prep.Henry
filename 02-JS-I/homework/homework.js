@@ -28,7 +28,7 @@ const nuevoModulo = 21 % 5 === 1;
 function devolverString(str) {
   // "Return" la string provista: str
   // Tu código:
-     return 'str';
+     return str;
   
 }
 
@@ -43,7 +43,7 @@ function suma(x, y) {
 function resta(x, y) {
   // Resta "y" de "x" y devuelve el valor
   // Tu código:
-  var resta = y - x; 
+  var resta = x - y; 
   return resta ; 
   
 }
@@ -68,7 +68,7 @@ function sonIguales(x, y) {
   // Devuelve "true" si "x" e "y" son iguales
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(x===y){
+  if(x === y){
     return true ; 
   }
   else{
@@ -81,7 +81,11 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(length.str1 == length.str2){
+
+  var a = str1.length ; 
+  var b = str2.length ; 
+  if( a == b){
+
     return true; 
   }
   else{
@@ -181,7 +185,7 @@ function elevar(num, exponent) {
 function redondearNumero(num) {
   // Redondea "num" al entero más próximo y devuélvelo
   // Tu código:
-  var num = math.round(num);
+  var num = Math.round(num);
   return num ;
   
 }
@@ -189,7 +193,7 @@ function redondearNumero(num) {
 function redondearHaciaArriba(num) {
   // Redondea "num" hacia arriba (al próximo entero) y devuélvelo
   // Tu código:
-  var num = math.ceil(num);
+  var num = Math.ceil(num);
   return num ;
 
 }
@@ -197,7 +201,7 @@ function redondearHaciaArriba(num) {
 function numeroRandom() {
   //Generar un número al azar entre 0 y 1 y devolverlo
   //Pista: investigá qué hace el método Math.random()
-  var num = math.random();
+  var num = Math.random();
   return num ;
   
 }
@@ -207,12 +211,13 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
-  if(numero > 0){
-     var mensaje = 'es positivo';
-   return mensaje ;
+  if(numero >= 1){
+     var mensaje1 = 'Es positivo';
+   return mensaje1 ;
   }
   else if(numero < 0){
-     var mensaje = 'es negativo';
+     var mensaje2 = 'Es negativo';
+     return  mensaje2;
   }
   else{
      return false ; 
@@ -241,7 +246,7 @@ function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-     var mensaje =  'hola ' + nombre; 
+     var mensaje =  'Hola ' + nombre + '!'; 
      return mensaje;
   
 }
@@ -265,7 +270,7 @@ function retornarPerimetro(lado){
 function areaDelTriangulo(base, altura){
   //Desarrolle una función que calcule el área de un triángulo.
   //Escribe tu código aquí
-  var area = ancho*(alto/2);
+  var area = base*(altura/2);
   return area;
 
 }
@@ -281,24 +286,32 @@ function deEuroAdolar(euro){
 }
 
 
+
 function esVocal(letra){
   //Escribe una función que reciba una letra y, si es una vocal, muestre el mensaje “Es vocal”. 
   //Verificar si el usuario ingresó un string de más de un carácter, en ese caso, informarle 
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   // Si no es vocal, tambien debe devolver "Dato incorrecto".
   //Escribe tu código aquí
-  var tamaño = length.letra; 
-  if(tamaño == 1 &&letra === 'a' && letra === 'e' && letra === 'i' && letra === 'o' && letra === 'u'){
-     var mensaje = 'El vocal' ; 
-     return mensaje ; 
-  }
-  else if(tamaño > 1){
-     var mensaje = 'Dato incorrecto'; 
-      return mensaje;
+
+  var mensaje1;
+  var mensaje2;
+  var mensaje3;
+  var tamaño = letra.length;  
+  if(tamaño === 1){
+
+    while(letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u'){
+       return "Es vocal";
+    }
+    mensaje2 = "Dato incorrecto" ;
+    return mensaje2;
+    
   }
 
+  mensaje3 = "Dato incorrecto"; 
+  return mensaje3;
+  
 }
-
 
 
 // No modificar nada debajo de esta línea
