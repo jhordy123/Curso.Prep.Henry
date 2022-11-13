@@ -132,16 +132,23 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
-   if(numero > 0 && numero < 1){
+   var numero_d = Math.floor(numero); 
+  
+    if(numero === numero_d){
+      return true; 
+    }
+    else{
+      return false;
+    }
+
+ /*
+  if(numero > 0 && numero < 1){
       return false ;
    }
    else {
     return true; 
    }
-   
-  
-
-
+   */
 }
 
 function fizzBuzz(numero) {
